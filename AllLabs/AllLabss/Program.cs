@@ -49,8 +49,9 @@ namespace AllLabs
         private static void LoadILabsList()
         {
             Assembly asm = Assembly.LoadFrom("LabsLib.dll"); //создание сборки из библиотеки классов
-            Type[] types = asm.GetTypes(); //выгрузка классов в массив
-            foreach (Type type in types) //перебираем классы и интерфейсы
+            Type[] types1 = asm.GetTypes();
+            Type[] types = types1; //выгрузка классов в массив
+            foreach (Type type in types)  //перебираем классы и интерфейсы
             {
                 if ((type.IsInterface == false) && (type.IsAbstract == false)) //не добавляем абстрактные классы и интерфейсы
                 {
